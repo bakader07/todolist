@@ -74,12 +74,17 @@
     var myTasks = document.querySelector("#tasks");
     //console.log(myTasks.id);
     var myBtn = document.getElementById("enter");
-    myBtn.onclick = function (){
-        var inp = document.querySelector("#text");
+    myBtn.onclick = function (){var inp = document.querySelector("#text");
         var task = inp.value;
         var tasks = document.querySelector("#tasks");
-        if(task != "")
-            tasks.innerHTML+="<div class='task'>"+task+"</div>";
+        if(task != ""){
+        //    tasks.innerHTML+="<div class='task'>"+task+"</div>";  ***ignore this***
+        var text = document.createTextNode(task);
+        var div = document.createElement("div");
+        div.setAttribute("class","task");
+        div.appendChild(text);
+        tasks.appendChild(div);
+        }
     }
 </script>
 </html>
