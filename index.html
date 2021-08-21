@@ -63,7 +63,7 @@
 </head>
 <body>
     <form id="input" method="GET">
-        <input type="text" placeholder="Your task" id="text" value="" autofocus>
+        <input type="text" placeholder="Your task" id="text" value="">
         <input type="submit" value="Add" id="enter">
     </form>
     <div id="tasks">
@@ -82,9 +82,10 @@
     var myBtn = document.getElementById("enter");
     myBtn.onclick = function (){
         var inp = document.querySelector("#text");
-        alert("hh");
-        var task = inp.getAttribute("value");
-        console.log(task);
+        var task = inp.value;
+        var tasks = document.querySelector("#tasks");
+        if(task != "")
+            tasks.innerHTML+="<div class='task'>"+task+"</div>";
     }
 </script>
 </html>
