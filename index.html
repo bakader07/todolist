@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is jsut a simple to do list">
+    <meta name="author" content="Baka">
+    <title>My To-Do List</title>
+    <style>
+        body {  margin: 0;  }
+        * {
+            color: #444444;
+            background-color: #eee;
+            font-weight: 500;
+            line-height: 30px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h2 {
+            margin: 0;
+            text-align: center;
+            font-weight: 700;
+            color: #6ba292;
+        }
+        #input {
+            width: 70vw;
+            padding: 20px 15vw;
+        }
+        #text {
+            text-indent: 5px;
+            padding: 3px;
+            margin: 1vw;
+            background-color: white;
+            border: 1px solid #6ba292;
+            border-radius: 8px;
+            height: 30px;
+            width: calc( (100vw - 34vw - 21px)/3*2);
+            box-shadow: 2px 2px 3px #bcd8b7;
+        }
+        #enter {
+            padding: 3px;
+            margin: 1vw;
+            background-color: #35ce8d;
+            color: #effffa;
+            border: 1px solid #6ba292;
+            border-radius: 8px;
+            height: 38px;
+            width: calc( (100vw - 34vw - 21px)/3);
+            box-shadow: 2px 2px 3px #6ba292;
+        }
+        .task {
+            text-align: center;
+            margin: 10px 10vw;
+            padding: 5px;
+            border: 2px solid #35ce8d;
+            border-radius: 8px;
+            background-color: rgb(250, 250, 250);
+            color: #6ba292;
+            text-indent: 5px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <form id="input" method="GET">
+        <input type="text" placeholder="Your task" id="text" value="" autofocus>
+        <input type="submit" value="Add" id="enter">
+    </form>
+    <div id="tasks">
+        <h2>My Tasks:</h2>
+        <div class="task">
+            task1
+        </div>
+        <div class="task">
+            task2
+        </div>
+    </div>
+</body>
+<script>
+    var myTasks = document.querySelector("#tasks");
+    //console.log(myTasks.id);
+    var myBtn = document.getElementById("enter");
+    myBtn.onclick = function (){
+        var inp = document.querySelector("#text");
+        alert("hh");
+        var task = inp.getAttribute("value");
+        console.log(task);
+    }
+</script>
+</html>
